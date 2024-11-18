@@ -193,22 +193,30 @@
 
 
 #### **Task 10: Push and Pull**
+↦ making a file ,adding it to staging area and commit the change .
 1. Push changes to the remote repository:  
    ```bash
    git push -u origin main
    ```
-   ↦ 
+   ↦ push the branch(main) to repo
+
+   ↦ -u = puse and pull set defalut to this branch (main)
+
 2. Pull changes from the remote:  
    ```bash
    git pull origin main
    ```
+   ↦ featch changes from repo to your current branch in local
 
 #### **Task 11: Cloning a Repository**
 1. Clone a remote repository:  
    ```bash
    git clone https://github.com/your-username/repo.git
    ```
+   ↦ ` git clone ` = to create local copy of repo
 
+   ↦ ` <forked-repo-url> ` = URL of forked repo
+   
 ---
 
 ### **Part 5: Advanced Git**
@@ -218,24 +226,40 @@
    ```bash
    git stash
    ```
+  ↦ (stash = store (something) safely in a hidden or secret place) stash the uncommited changes ( save  your un-committed changes hinddenly  ) 
+
+  ↦ locally any change in file will be hide
+
 2. Apply stashed changes:  
    ```bash
    git stash apply
    ```
+   ↦ apply the stash changes back to your local 
+
 3. Drop the stash:  
    ```bash
    git stash drop
    ```
+   ↦ Once you have applied the stashed changes, you may want to remove the stash entry from your stash list
 
 #### **Task 13: Tagging Commits**
 1. Create and annotate a tag:  
    ```bash
    git tag -a v1.0 -m "Version 1.0 release"
    ```
+    ↦ here tag is important bookmark which is easily reference sepecific versions.
+
+   ↦ -a refer to annotated tag (store extra metadata such as author name, release notes, tag-message, and date )
+
+   ↦ v1.0 = tage name 
+
+   ↦ -m "----" = message describing the tag
+
 2. Push the tag to the remote:  
    ```bash
    git push origin v1.0
    ```
+   ↦ to push the tag to repo
 
 #### **Task 14: Rewriting Commit History**
 1. Use interactive rebase to modify commit messages:  
@@ -245,10 +269,14 @@
    - Replace `pick` with `edit` or `squash` as needed.
 
 #### **Task 15: Cherry-Picking Commits**
+
+    ↦ initialy main branch , we amde secound branch namr new, now commiting some change , after that creating new branch and switch to it.
+
 1. Apply a specific commit to another branch:  
    ```bash
    git cherry-pick <commit-hash>
    ```
+    ↦ now we want content of one commit from main branch, then use git cherry-pick to store the commited change in branch new.
 
 ---
 
@@ -259,6 +287,14 @@
    ```bash
    git clone https://github.com/your-username/forked-repo.git
    ```
+   ↦ goto the repo 
+
+   ↦ click on the flrk button
+   
+   ↦ to clone in local ,git clone <URl>
+
+   ↦ run git bash
+
 2. Make changes and push them:  
    ```bash
    git checkout -b fix-typo
@@ -266,7 +302,23 @@
    git commit -m "Fixed a typo"
    git push origin fix-typo
    ```
+   ↦ making new branch and switch to it
+
+   ↦ edit the content of file and add to staging area
+
+   ↦ commit the change
+
+   ↦ push branch to repo
+   
 3. Open a pull request on GitHub.
+   
+   ↦ navigate to forked repo
+
+   ↦ switch from main to fix-typo
+
+   ↦ create pull request
+
+   ↦ with title and description
 
 #### **Task 17: Simulating Team Collaboration**
 1. Simulate a conflict by having two users modify the same file.  
@@ -283,10 +335,17 @@
    git add .gitignore
    git commit -m "Added .gitignore"
    ```
+   ↦ create file .gitingnore with some content
+
+   ↦ add the file to staging area
+
+   ↦ commit th change
+
 2. Verify that ignored files are not staged:  
    ```bash
    git status
    ```
+   ↦ by git status we see the file is not in staging area therfore the file is ingnor
 
 ---
 
@@ -297,6 +356,17 @@
    ```bash
    git clean -f
    ```
+   **[video for git clean](https://youtu.be/W_vXhT2YfBY?si=gawmjMLoAjlIGdOD)**
+
+   ↦ git clean the file which are not in staging area are remove. 
+   ↦ -n    = to check which files will be removed
+
+   ↦ -n -d = to check which file and folder will be remove
+
+   ↦ -f    = to delete file which are not tracked
+
+   ↦ -d -f = to delete folder which are not tracked
+
 
 #### **Task 20: Aliases and Shortcuts**
 1. Create an alias for frequently used commands:  
@@ -304,10 +374,18 @@
    git config --global alias.st status
    git config --global alias.cm commit
    ```
+   ↦ creating short-cut for any command (globally)
+
+   ↦ making shortcut git st = git status
+
+   ↦ making shortcut git cm = git commit
+
+   * ↦ vim ~/.gitconfig to get list of shortcut made
 2. Use the alias:  
    ```bash
    git st
    git cm -m "Message"
    ```
+   ↦ using the shortcut of st = status and cm = commit.
 
 ---

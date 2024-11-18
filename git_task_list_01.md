@@ -272,8 +272,11 @@
    git tag -a v1.0 -m "Version 1.0 release"
    ```
    ↦ here tag is important bookmark which is easily reference sepecific versions.
+   
    ↦ -a refer to annotated tag (store extra metadata such as author name, release notes, tag-message, and date )
+
    ↦ v1.0 = tage name 
+
    ↦ -m "----" = message describing the tag
    
 2. Push the tag to the remote repository:  
@@ -340,7 +343,7 @@
 
 4. Open a pull request on GitHub.  
 
-   ↦Go to your forked repository on GitHub.
+   ↦ Go to your forked repository on GitHub.
 
    ↦ Click the "New pull request" button.
 
