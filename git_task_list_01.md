@@ -78,9 +78,233 @@
    ```bash
    git log --oneline --graph --decorate
    ```
-   ↦
+   ↦ to know branch , commit history in one line
+
    Example Output:  
    ```
    * 2f8d6a2 (HEAD -> main) Updated README with a description
    * d3c4b21 Initial commit: Added README.md
    ```
+
+#### **Task 5: Create and Clone a Repository**
+1. Create A repository on GitHub named ` example-repo`.
+2. Clone it locally :
+   ```bash
+     git clone http:codinggita.com/example-repo
+   ```
+   ↦ to clone github repo into local folder
+
+#### **Task 6: Understanding the Git Workflow**
+- Example Workflow:
+ 
+  i. Make Changes to a file in the working directory:
+   ```bash
+    echo "Workflow example" >> workflow.md
+   ```
+   ↦ make a new file
+  ii. Stage the file:
+   ```bash
+     git add workflow.md
+   ```
+   ↦ added to staging area
+  iii.Commit the file to the repository:
+   ```bash
+    git commit -m "Added workflow example"
+   ```
+   ↦ save the chage of staging area
+
+---
+
+### **Part 2: Working with Repositories**
+
+#### **Task 7: Branching and Merging**
+1. Create a new branch for a feature:  
+   ```bash
+   git branch feature-login
+   git checkout feature-login
+   ```
+   ↦ makinging new branch feature-login
+   ↦ shifting to branch feature-login
+
+   Or use:  
+   ```bash
+   git checkout -b feature-login
+   ```
+   ↦ checkout -b to create new branch and swift to new branch (two process in one command )
+
+2. Add a new file and commit changes:  
+   ```bash
+   echo "Login Page" > login.html
+   git add login.html
+   git commit -m "Added login page"
+   ```
+   ↦ creating new file
+   ↦ adding to staging area
+   ↦ commit the change 
+
+3. Merge the feature branch into `main`:  
+   ```bash
+   git checkout main
+   git merge feature-login
+   ```
+   ↦ all the change in branch feature-login will combine to mai branch 
+
+#### **Task 8: Handling Merge Conflicts**
+1. Create two branches:  
+   ```bash
+   git branch branch-A
+   git branch branch-B
+   ```
+   ↦ to create branch-A and branch-B
+2. Modify the same line in `README.md` in both branches. 
+   ↦ switch to branch-A ,edit the file , add to staging area and commit the change 
+   ↦ switch to branch-B ,edit the file , add to staging area and commit the change 
+3. Merge `branch-A` into `main`:  
+   ```bash
+   git checkout main
+   git merge branch-A
+   ```
+   ↦ switch to branch main, merge branch-A with main
+4. Attempt to merge `branch-B` into `main` (this will cause a conflict):  
+   ```bash
+   git merge branch-B
+   ```
+   ↦ merge branch-B with main ,this will give conflict
+5. Resolve the conflict manually in `README.md`, then: 
+   ↦ the conflict will resolve manually by opening readme file here conflict will show , resolve conflict as your reqirement .
+   ```bash
+   git add README.md
+   git commit -m "Resolved merge conflict between branch-A and branch-B"
+   ```
+   ↦ then add readme file to staging area and commit the change
+
+#### **Task 9: Renaming and Deleting Branches**
+1. Rename a branch:  
+   ```bash
+   git branch -m old-branch-name new-branch-name
+   ```
+   ↦ to change name of branch
+2. Delete a branch:  
+   ```bash
+   git branch -d feature-login
+   ```
+   ↦ to delete branch
+---
+
+### **Part 3: Advanced Git Operations**
+
+#### **Task 10: Using Git Stash**
+**[youtube video link for stash](https://youtu.be/HlnxA_0Pjwk?si=1Keh79IiYV91CRT-)**
+
+↦ the repository has temp.md file (from local make file , add to staging area , commit the change and push)
+
+1. Make changes to a file but don’t commit:  
+   ```bash
+   echo "Temporary work" >> temp.md
+   ```
+   ↦ editing file temp.md
+
+2. Stash the changes:  
+   ```bash
+   git stash
+   ```
+   ↦ (stash = store (something) safely in a hidden or secret place) stash the uncommited changes ( save  your un-committed changes hinddenly  ) 
+   ↦ locally any change in file will be hide 
+
+3. View stashed changes:  
+   ```bash
+   git stash list
+   ```
+   ↦ show the list of all the stashes (list of stack of stash)
+   example: ` stash@{0} `
+
+4. Apply the stashed changes:  
+   ```bash
+   git stash apply
+   ```
+   ↦ 
+5. Drop the stash after applying:  
+   ```bash
+   git stash drop
+   ```
+
+#### **Task 11: Rewriting History with Interactive Rebase**
+1. Create multiple commits:  
+   ```bash
+   echo "Commit 1" > file1.txt && git add file1.txt && git commit -m "Commit 1"
+   echo "Commit 2" > file2.txt && git add file2.txt && git commit -m "Commit 2"
+   echo "Commit 3" > file3.txt && git add file3.txt && git commit -m "Commit 3"
+   ```
+2. Squash commits into one:  
+   ```bash
+   git rebase -i HEAD~3
+   ```
+   Example: Replace `pick` with `squash` for the second and third commits.
+
+#### **Task 12: Cherry-Picking Commits**
+1. Create a new branch:  
+   ```bash
+   git checkout -b cherry-pick-example
+   ```
+2. Cherry-pick a specific commit from another branch:  
+   ```bash
+   git cherry-pick <commit-hash>
+   ```
+
+#### **Task 13: Tagging Commits**
+1. Tag the current commit:  
+   ```bash
+   git tag -a v1.0 -m "Version 1.0 release"
+   ```
+2. Push the tag to the remote repository:  
+   ```bash
+   git push origin v1.0
+   ```
+
+#### **Task 14: Working with Remote Repositories**
+1. Add a remote repository:  
+   ```bash
+   git remote add origin <repository-url>
+   ```
+2. Push your changes to the remote repository:  
+   ```bash
+   git push origin main
+   ```
+
+#### **Task 15: Forking and Contributing**
+1. Fork a repository on GitHub.  
+2. Clone the fork locally:  
+   ```bash
+   git clone <forked-repo-url>
+   ```
+3. Create a new branch, make changes, and push:  
+   ```bash
+   git checkout -b fix-typo
+   echo "Typo fixed" >> README.md
+   git add README.md
+   git commit -m "Fixed a typo"
+   git push origin fix-typo
+   ```
+4. Open a pull request on GitHub.  
+
+---
+
+### **Part 4: Additional Practice**
+
+#### **Task 16: Simulate Team Collaboration**
+1. Create a repository and share it with a friend.  
+2. Both make changes to the same file simultaneously.  
+3. Practice resolving merge conflicts and pushing changes.
+
+#### **Task 17: Git Ignore**
+1. Create a `.gitignore` file:  
+   ```bash
+   echo "node_modules/" > .gitignore
+   ```
+2. Add files and ensure ignored files are not staged:  
+   ```bash
+   git add .
+   ```
+
+
+
