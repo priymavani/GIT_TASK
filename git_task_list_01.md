@@ -8,6 +8,11 @@
     git config --globle user.name "priymavani"
     git config --globle user.email "priymavani@gmail.com"  
     ``` 
+    ↦ Golbal = Settings that apply to all repositories for the current user.
+
+    ↦ Local = Settings that apply only to a specific repository.
+    ↦ System = Settings that apply to all users on the system.
+    
     ↦ to link github account to local (globally) by user name and email
 
 
@@ -367,7 +372,7 @@
    ↦
    ↦
    ↦
-   
+
 #### **Task 17: Git Ignore**
 1. Create a `.gitignore` file:  
    ```bash
