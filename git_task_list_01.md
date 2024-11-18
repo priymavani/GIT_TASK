@@ -222,11 +222,14 @@
    ```bash
    git stash apply
    ```
-   ↦ 
+   ↦ apply the stash changes back to your local 
+
 5. Drop the stash after applying:  
    ```bash
    git stash drop
    ```
+   ↦ Once you have applied the stashed changes, you may want to remove the stash entry from your stash list
+
 
 #### **Task 11: Rewriting History with Interactive Rebase**
 1. Create multiple commits:  
@@ -235,6 +238,7 @@
    echo "Commit 2" > file2.txt && git add file2.txt && git commit -m "Commit 2"
    echo "Commit 3" > file3.txt && git add file3.txt && git commit -m "Commit 3"
    ```
+   ↦
 2. Squash commits into one:  
    ```bash
    git rebase -i HEAD~3
@@ -242,41 +246,75 @@
    Example: Replace `pick` with `squash` for the second and third commits.
 
 #### **Task 12: Cherry-Picking Commits**
+↦ initialy main branch , we amde secound branch namr new, now commiting some change , after that creating new branch
 1. Create a new branch:  
    ```bash
    git checkout -b cherry-pick-example
    ```
+   ↦creating new branch and swithing branch to it.
+
 2. Cherry-pick a specific commit from another branch:  
    ```bash
    git cherry-pick <commit-hash>
    ```
 
+   ↦ now we want content of one commit from main branch, then use git cherry-pick to store the commited change in branch new.
+
 #### **Task 13: Tagging Commits**
+
 1. Tag the current commit:  
    ```bash
    git tag -a v1.0 -m "Version 1.0 release"
    ```
+   ↦ here tag is important bookmark which is easily reference sepecific versions.
+   ↦ -a refer to annotated tag (store extra metadata such as author name, release notes, tag-message, and date )
+   ↦ v1.0 = tage name 
+   ↦ -m "----" = message describing the tag
+   
 2. Push the tag to the remote repository:  
    ```bash
    git push origin v1.0
    ```
+   ↦ to push the tag to repo
 
 #### **Task 14: Working with Remote Repositories**
+
 1. Add a remote repository:  
    ```bash
    git remote add origin <repository-url>
    ```
+   ↦ git remote add = to add a new remote repository to your local Git configuration
+
+   ↦ origin = to refer to the main remote repository.
+
+   ↦ `<repository-url>` = URL of the remote repository where you want to push your code
+
 2. Push your changes to the remote repository:  
    ```bash
    git push origin main
    ```
+   ↦ git push = to push data to repo.
+
+   ↦ main = branch name
+
 
 #### **Task 15: Forking and Contributing**
+
 1. Fork a repository on GitHub.  
+   ↦ go to the repository you want to fork.
+
+   ↦ click the "Fork" button at the top right corner of the repository page
+
+   ↦ the forked repository will be created under your GitHub account.
+
 2. Clone the fork locally:  
    ```bash
    git clone <forked-repo-url>
    ```
+   ↦ ` git clone ` = to create local copy of repo
+
+   ↦ ` <forked-repo-url> ` = URL of forked repo
+   
 3. Create a new branch, make changes, and push:  
    ```bash
    git checkout -b fix-typo
@@ -285,26 +323,62 @@
    git commit -m "Fixed a typo"
    git push origin fix-typo
    ```
+   ↦ making new branch and switching
+   
+   ↦ making file with some text
+   
+   ↦ adding to staging area
+   
+   ↦ commit the change
+   
+   ↦ push branch fix-typo to repo
+
 4. Open a pull request on GitHub.  
 
+   ↦Go to your forked repository on GitHub.
+
+   ↦ Click the "New pull request" button.
+
+   ↦ Select the original repository and the branch you created (fix-typo) as the source.
+   
+   ↦ Click the "Create pull request" button.
 ---
 
 ### **Part 4: Additional Practice**
 
 #### **Task 16: Simulate Team Collaboration**
 1. Create a repository and share it with a friend.  
+   ↦ 
+   ↦
+   ↦
+   ↦
+   ↦
+   ↦
 2. Both make changes to the same file simultaneously.  
+   ↦
+   ↦
+   ↦
+   ↦
+   ↦
 3. Practice resolving merge conflicts and pushing changes.
-
+   ↦
+   ↦
+   ↦
+   ↦
+   ↦
+   ↦
+   
 #### **Task 17: Git Ignore**
 1. Create a `.gitignore` file:  
    ```bash
    echo "node_modules/" > .gitignore
    ```
+   ↦ making new file with some content
+
 2. Add files and ensure ignored files are not staged:  
    ```bash
    git add .
    ```
-
+   ↦ adding all data of the folder to staging area
 
 
