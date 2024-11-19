@@ -8,26 +8,37 @@
    ```bash
    echo "Temporary changes" >> temp-file.txt
    ```
+   ↦ making new file with some content
+
 2. View the status of changes:  
    ```bash
    git status
    ```
+   ↦ chaking status , which show temp-file.txt is not staged
+
    - **Output**:  
      ```
      Changes not staged for commit:
        modified:   temp-file.txt
      ```
+     
 
 3. Stash the changes:  
    ```bash
    git stash
    ```
+   ↦ (stash = store (something) safely in a hidden or secret place) stash the uncommited changes ( save your un-committed changes hinddenly ) 
+
+   ↦ locally any change in file will be hide
+
    - **Explanation**: This command saves changes to a stash and restores the working directory to the last commit state.
 
 4. View the stashed changes:  
    ```bash
    git stash list
    ```
+   ↦ show the list of all the stashes (list of stack of stash) example: stash@{0} 
+
    - **Output**:  
      ```
      stash@{0}: WIP on main: 27e5f23 Added temporary changes
@@ -38,25 +49,32 @@
    ```bash
    git stash apply
    ```
+    ↦  apply the stash changes back to your local
+
 2. Drop the most recent stash after applying it:  
    ```bash
    git stash drop
    ```
+     ↦ Once you have applied the stashed changes, you may want to remove the stash entry from your stash list then drop it .
 
 3. Alternatively, to apply a specific stash:  
    ```bash
    git stash apply stash@{1}
    ```
+    ↦  apply the stash changes back to your local by git stash apply stash@{1} or git stash apply 1
 
 #### **Task 3: Stash Untracked Files**
 1. Stash changes, including untracked files:  
    ```bash
    git stash -u
    ```
+    ↦ -u = includes untracked files in the stash.(files that have been created but not yet added to the Git index with git add)
+
 2. Apply stashed changes including untracked files:  
    ```bash
    git stash apply
    ```
+    ↦ 
 
 ---
 
